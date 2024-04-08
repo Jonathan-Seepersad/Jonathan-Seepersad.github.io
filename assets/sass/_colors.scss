@@ -1,0 +1,16 @@
+@use "hugo:vars" as h;
+$base-hue: 20;
+
+// Light mode colors:
+$light-BG-color: hsl($base-hue, 30%, 80%);
+$light-FG-color: hsl($base-hue, 50%, 95%);
+$light-Text-color: hsl($base-hue, 16%, 30%);
+$light-Link-color: hsl(212, 100%, 48%);
+$light-Header-color: hsl($base-hue, 40%, 35%);
+
+// Dark mode colors:
+$dark-BG-color: hsl($base-hue, 29%, 9%);
+$dark-FG-color: hsl($base-hue, 23%, 19%);
+$dark-Text-color: hsl($base-hue, 100%, 81%);
+$dark-Link-color: hsl(212, 100%, 48%);
+$dark-Header-color: hsl($base-hue, 100%, 87%);

@@ -1,0 +1,422 @@
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: local("Atkinson Hyperlegible"), url("/fonts/Atkinson-Hyperlegible-Regular.woff2") format("woff2"), url("/fonts/Atkinson-Hyperlegible-Regular.woff") format("woff"), url("/fonts/Atkinson-Hyperlegible-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: local("Atkinson Hyperlegible"), url("/fonts/Atkinson-Hyperlegible-Bold.woff2") format("woff2"), url("/fonts/Atkinson-Hyperlegible-Bold.woff") format("woff"), url("/fonts/Atkinson-Hyperlegible-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: italic;
+  font-weight: normal;
+  src: local("Atkinson Hyperlegible"), url("/fonts/Atkinson-Hyperlegible-Italic.woff2") format("woff2"), url("/fonts/Atkinson-Hyperlegible-Italic.woff") format("woff"), url("/fonts/Atkinson-Hyperlegible-Italic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: italic;
+  font-weight: bold;
+  src: local("Atkinson Hyperlegible"), url("/fonts/Atkinson-Hyperlegible-BoldItalic.woff2") format("woff2"), url("/fonts/Atkinson-Hyperlegible-BoldItalic.woff") format("woff"), url("/fonts/Atkinson-Hyperlegible-BoldItalic.ttf") format("truetype"); }
+
+@use "hugo:vars" as h;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dbc7bd;
+  width: 100%;
+  height: 100%;
+  font-family: "Atkinson Hyperlegible", "Helvetica Neue", "Arial", sans-serif; }
+
+nav.page-nav {
+  margin: 0 3rem 2rem;
+  padding: .5rem;
+  border-radius: 0 0 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  bottom: 2rem;
+  box-shadow: 0 0 2rem; }
+  nav.page-nav a {
+    padding: 1rem;
+    border-radius: 5rem;
+    margin: 0 .5rem;
+    text-decoration: none;
+    border: solid 1px;
+    transition: box-shadow .25s ease-out, transform .25s ease-out;
+    display: inline-block; }
+    nav.page-nav a:first-child {
+      margin-left: 0; }
+    nav.page-nav a:hover {
+      transform: scale(1.05); }
+  nav.page-nav:after {
+    content: "";
+    display: table;
+    clear: both; }
+  nav.page-nav div.theme-changer {
+    order: 1;
+    padding: .5rem;
+    border-radius: 1.5rem;
+    border: solid 1px;
+    display: inline-block; }
+    nav.page-nav div.theme-changer button {
+      border: solid 1px;
+      cursor: pointer;
+      padding: .5rem;
+      margin: 0 0 0 .5rem;
+      border-radius: 2rem; }
+      nav.page-nav div.theme-changer button:hover {
+        text-decoration: underline; }
+
+header h1 {
+  padding: 0;
+  margin: 0;
+  border-bottom: .25rem solid; }
+
+header p {
+  margin: .25rem 0 2rem;
+  font-style: italic; }
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 0 2rem 0; }
+  main header {
+    padding: 2rem 2rem 0 2rem; }
+  main article {
+    padding: 0 3rem; }
+  main .comments {
+    margin: 2rem 2rem 0;
+    padding: 1rem;
+    border: .1rem solid black;
+    border-radius: 1rem; }
+  main .article-list {
+    margin: 2rem 2rem 0; }
+    main .article-list a {
+      text-decoration: none; }
+      main .article-list a:hover section {
+        transform: translate(-0.25rem, -0.25rem); }
+    main .article-list section {
+      padding: 1rem;
+      border: .1rem solid;
+      border-radius: 1rem;
+      transition: transform .25s ease-out;
+      box-shadow: .25rem .25rem;
+      margin-bottom: 1rem; }
+      main .article-list section header {
+        padding: 0;
+        margin: 0; }
+        main .article-list section header h1 {
+          border-bottom: .25rem solid; }
+        main .article-list section header p {
+          margin: .25rem 0;
+          font-style: italic; }
+  main .section-list {
+    margin: 2rem 2rem 0; }
+    main .section-list a {
+      text-decoration: none; }
+      main .section-list a:hover section {
+        transform: translate(-0.25rem, -0.25rem); }
+    main .section-list section {
+      display: inline-block;
+      padding: 1rem;
+      border: .1rem solid;
+      border-radius: 1rem;
+      transition: transform .25s ease-out;
+      box-shadow: .25rem .25rem;
+      margin-bottom: 1rem;
+      text-decoration: none; }
+
+.comments {
+  max-width: 40rem;
+  margin: 2rem auto; }
+
+body {
+  background-color: #dbc7bd; }
+
+nav.page-nav {
+  background: #f9f0ec;
+  box-shadow: #dbc7bd 0 0 2rem; }
+  nav.page-nav a {
+    color: #594840; }
+    nav.page-nav a:hover {
+      border-color: #0072f5;
+      color: #0072f5;
+      box-shadow: 0 0.5rem 3rem #dbc7bd; }
+  nav.page-nav .theme-changer {
+    color: #594840;
+    background: #f9f0ec; }
+  nav.page-nav .toggle-theme {
+    background: #3c2d25;
+    color: #ffbe9e;
+    border-color: #594840; }
+    nav.page-nav .toggle-theme::after {
+      content: "dark"; }
+  nav.page-nav .clear-theme {
+    background: #f9f0ec;
+    color: #594840; }
+
+header h1, header p {
+  color: #7d4d36; }
+
+header h1 {
+  border-color: #7d4d36; }
+
+main {
+  background-color: #f9f0ec;
+  color: #594840; }
+  main a {
+    color: #0072f5; }
+  main .section-list a:hover section {
+    border-color: #0072f5;
+    color: #0072f5; }
+  main .section-list a section {
+    border-color: #7d4d36;
+    background: #f9f0ec;
+    color: #594840; }
+  main .article-list a {
+    color: #594840; }
+    main .article-list a section {
+      border-color: #7d4d36;
+      background: #f9f0ec; }
+    main .article-list a h1 {
+      color: #7d4d36; }
+    main .article-list a:hover {
+      color: #0072f5; }
+      main .article-list a:hover h1, main .article-list a:hover p {
+        color: #0072f5; }
+      main .article-list a:hover section {
+        border-color: #0072f5; }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1e1510; }
+  nav.page-nav {
+    background: #3c2d25;
+    box-shadow: #1e1510 0 0 2rem; }
+    nav.page-nav a {
+      color: #ffbe9e; }
+      nav.page-nav a:hover {
+        border-color: #0072f5;
+        color: #0072f5;
+        box-shadow: 0 0.5rem 3rem #1e1510; }
+    nav.page-nav .theme-changer {
+      color: #ffbe9e;
+      background: #3c2d25; }
+    nav.page-nav .toggle-theme {
+      background: #f9f0ec;
+      color: #594840;
+      border-color: #ffbe9e; }
+      nav.page-nav .toggle-theme::after {
+        content: "light"; }
+    nav.page-nav .clear-theme {
+      background: #3c2d25;
+      color: #ffbe9e; }
+  header {
+    font-weight: bold; }
+    header h1, header p {
+      color: #ffd3bd; }
+    header h1 {
+      border-color: #ffd3bd; }
+  main {
+    background-color: #3c2d25;
+    color: #ffbe9e; }
+    main a {
+      color: #0072f5; }
+  .section-list a:hover section {
+    border-color: #0072f5;
+    color: #0072f5; }
+  .section-list a section {
+    border-color: #ffd3bd;
+    background: #3c2d25;
+    color: #ffbe9e; }
+  .article-list a {
+    color: #ffbe9e; }
+    .article-list a section {
+      border-color: #ffd3bd;
+      background: #3c2d25; }
+    .article-list a h1 {
+      color: #ffd3bd; }
+    .article-list a:hover {
+      color: #0072f5; }
+      .article-list a:hover h1, .article-list a:hover p {
+        color: #0072f5; }
+      .article-list a:hover section {
+        border-color: #0072f5; } }
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #dbc7bd; }
+  nav.page-nav {
+    background: #f9f0ec;
+    box-shadow: #dbc7bd 0 0 2rem; }
+    nav.page-nav a {
+      color: #594840; }
+      nav.page-nav a:hover {
+        border-color: #0072f5;
+        color: #0072f5;
+        box-shadow: 0 0.5rem 3rem #dbc7bd; }
+    nav.page-nav .theme-changer {
+      color: #594840;
+      background: #f9f0ec; }
+    nav.page-nav .toggle-theme {
+      background: #3c2d25;
+      color: #ffbe9e;
+      border-color: #594840; }
+      nav.page-nav .toggle-theme::after {
+        content: "dark"; }
+    nav.page-nav .clear-theme {
+      background: #f9f0ec;
+      color: #594840; }
+  header h1, header p {
+    color: #7d4d36; }
+  header h1 {
+    border-color: #7d4d36; }
+  main {
+    background-color: #f9f0ec;
+    color: #594840; }
+    main a {
+      color: #0072f5; }
+    main .section-list a:hover section {
+      border-color: #0072f5;
+      color: #0072f5; }
+    main .section-list a section {
+      border-color: #7d4d36;
+      background: #f9f0ec;
+      color: #594840; }
+    main .article-list a {
+      color: #594840; }
+      main .article-list a section {
+        border-color: #7d4d36;
+        background: #f9f0ec; }
+      main .article-list a h1 {
+        color: #7d4d36; }
+      main .article-list a:hover {
+        color: #0072f5; }
+        main .article-list a:hover h1, main .article-list a:hover p {
+          color: #0072f5; }
+        main .article-list a:hover section {
+          border-color: #0072f5; } }
+
+html[theme="light"] body {
+  background-color: #dbc7bd; }
+
+html[theme="light"] nav.page-nav {
+  background: #f9f0ec;
+  box-shadow: #dbc7bd 0 0 2rem; }
+  html[theme="light"] nav.page-nav a {
+    color: #594840; }
+    html[theme="light"] nav.page-nav a:hover {
+      border-color: #0072f5;
+      color: #0072f5;
+      box-shadow: 0 0.5rem 3rem #dbc7bd; }
+  html[theme="light"] nav.page-nav .theme-changer {
+    color: #594840;
+    background: #f9f0ec; }
+  html[theme="light"] nav.page-nav .toggle-theme {
+    background: #3c2d25;
+    color: #ffbe9e;
+    border-color: #594840; }
+    html[theme="light"] nav.page-nav .toggle-theme::after {
+      content: "dark"; }
+  html[theme="light"] nav.page-nav .clear-theme {
+    background: #f9f0ec;
+    color: #594840; }
+
+html[theme="light"] header h1, html[theme="light"] header p {
+  color: #7d4d36; }
+
+html[theme="light"] header h1 {
+  border-color: #7d4d36; }
+
+html[theme="light"] main {
+  background-color: #f9f0ec;
+  color: #594840; }
+  html[theme="light"] main a {
+    color: #0072f5; }
+  html[theme="light"] main .section-list a:hover section {
+    border-color: #0072f5;
+    color: #0072f5; }
+  html[theme="light"] main .section-list a section {
+    border-color: #7d4d36;
+    background: #f9f0ec;
+    color: #594840; }
+  html[theme="light"] main .article-list a {
+    color: #594840; }
+    html[theme="light"] main .article-list a section {
+      border-color: #7d4d36;
+      background: #f9f0ec; }
+    html[theme="light"] main .article-list a h1 {
+      color: #7d4d36; }
+    html[theme="light"] main .article-list a:hover {
+      color: #0072f5; }
+      html[theme="light"] main .article-list a:hover h1, html[theme="light"] main .article-list a:hover p {
+        color: #0072f5; }
+      html[theme="light"] main .article-list a:hover section {
+        border-color: #0072f5; }
+
+html[theme="dark"] body {
+  background-color: #1e1510; }
+
+html[theme="dark"] nav.page-nav {
+  background: #3c2d25;
+  box-shadow: #1e1510 0 0 2rem; }
+  html[theme="dark"] nav.page-nav a {
+    color: #ffbe9e; }
+    html[theme="dark"] nav.page-nav a:hover {
+      border-color: #0072f5;
+      color: #0072f5;
+      box-shadow: 0 0.5rem 3rem #1e1510; }
+  html[theme="dark"] nav.page-nav .theme-changer {
+    color: #ffbe9e;
+    background: #3c2d25; }
+  html[theme="dark"] nav.page-nav .toggle-theme {
+    background: #f9f0ec;
+    color: #594840;
+    border-color: #ffbe9e; }
+    html[theme="dark"] nav.page-nav .toggle-theme::after {
+      content: "light"; }
+  html[theme="dark"] nav.page-nav .clear-theme {
+    background: #3c2d25;
+    color: #ffbe9e; }
+
+html[theme="dark"] header {
+  font-weight: bold; }
+  html[theme="dark"] header h1, html[theme="dark"] header p {
+    color: #ffd3bd; }
+  html[theme="dark"] header h1 {
+    border-color: #ffd3bd; }
+
+html[theme="dark"] main {
+  background-color: #3c2d25;
+  color: #ffbe9e; }
+  html[theme="dark"] main a {
+    color: #0072f5; }
+
+html[theme="dark"] .section-list a:hover section {
+  border-color: #0072f5;
+  color: #0072f5; }
+
+html[theme="dark"] .section-list a section {
+  border-color: #ffd3bd;
+  background: #3c2d25;
+  color: #ffbe9e; }
+
+html[theme="dark"] .article-list a {
+  color: #ffbe9e; }
+  html[theme="dark"] .article-list a section {
+    border-color: #ffd3bd;
+    background: #3c2d25; }
+  html[theme="dark"] .article-list a h1 {
+    color: #ffd3bd; }
+  html[theme="dark"] .article-list a:hover {
+    color: #0072f5; }
+    html[theme="dark"] .article-list a:hover h1, html[theme="dark"] .article-list a:hover p {
+      color: #0072f5; }
+    html[theme="dark"] .article-list a:hover section {
+      border-color: #0072f5; }

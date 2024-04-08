@@ -1,0 +1,34 @@
+/*!
+ * Modified from GitHub's Dark Dimmed theme, licensed under the MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+
+// import colors
+@import 'colors';
+@import 'fonts';
+
+main {
+    padding: 2rem;
+}
+
+.gsc-main {
+    padding: 1rem;
+    //margin: 2rem;
+    //background-color: #1e1f23;
+    color: #0e70d3;
+    border: solid 1px #1e1f23;
+    border-radius: .25em;
+    max-width: 40rem;
+    background: white;
+}
+
+.gsc-comment-form {
+    background-color: blue;
+    color: white
+}
+
+.gsc-comment-form .gsc-header {
+    background-color: green;
+    color: white
+}

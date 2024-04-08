@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+    <article>
+        {{ .Content }}
+    </article>
+    <aside>
+        {{ .Fragments.ToHTML 1 6 false }}
+    </aside>
+{{ end }}

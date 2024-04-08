@@ -1,0 +1,114 @@
+{{ define "head" }}
+    {{/*  Convert Sass to CSS  */}}
+    {{ $stylesheets := (dict
+            "sass/main.scss" "css/main.css"
+            ) }}
+    {{ range $src, $dst := $stylesheets }}
+        {{ with resources.Get $src | toCSS (dict "transpiler" "libsass" "targetPath" $dst) }}
+            <link rel="stylesheet" href="{{ .Permalink }}">
+        {{ end }}
+    {{ end }}
+
+    {{/*  Add favicon  */}}
+    {{ with resources.Get "favicon.png" }}
+        <link rel="icon" href="{{ .Permalink }}">
+    {{ end }}
+
+    {{/*  Set page title  */}}
+    {{ if and .IsHome (eq .Title "") }}
+        <title>{{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ end }}
+
+    {{/*  Set metadata tags  */}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ with .Description }}
+        <meta name="description" content="{{ . }}">
+    {{ end }}
+
+
+{{ end }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ block "head" . }}{{ end }}
+</head>
+<body>
+<nav class="page-nav">
+    <div class="menu">
+        <a href="{{ .Site.BaseURL }}">Home </a>
+        {{ with site.Menus.main }}
+            {{ range . -}}
+                {{ if $.IsMenuCurrent .Menu . -}}}
+                    <a class="current" href="{{ .URL }}">{{ .Name }}</a>
+                {{- else -}}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                {{- end -}}
+            {{ end }}
+        {{ end }}
+    </div>
+
+    {{/*  theme changer  */}}
+    <div class="theme-changer"></div>
+    {{/*  determine theme style  */}}
+    <script>
+        const theme = localStorage.getItem("theme");
+        if (theme) {
+            document.documentElement.setAttribute("theme", theme)
+        }
+
+        function invertTheme(theme) {
+            return {
+                dark: "light", light: "dark"
+            }[theme] || (window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "light" : "dark");
+        }
+
+        const themeSpan = document.createElement("span")
+        themeSpan.classList.add("theme")
+        themeSpan.textContent = theme || "unset"
+
+        const themeToggle = document.createElement("button")
+        themeToggle.classList.add("toggle-theme")
+        themeToggle.addEventListener("click", () => {
+            const theme = invertTheme(localStorage.getItem("theme"))
+            localStorage.setItem("theme", theme)
+            document.documentElement.setAttribute("theme", theme)
+            themeSpan.textContent = theme
+        })
+
+        const defaultTheme = document.createElement("button")
+        defaultTheme.classList.add("clear-theme")
+        defaultTheme.textContent = "default"
+        defaultTheme.addEventListener("click", () => {
+            localStorage.removeItem("theme")
+            document.documentElement.removeAttribute("theme")
+            themeSpan.textContent = "unset"
+        })
+
+        const themeChanger = document.querySelector("div.theme-changer")
+        themeChanger.innerText = "Theme: "
+        themeChanger.append(themeSpan, themeToggle, defaultTheme)
+    </script>
+    {{/*  Hide theme changer if there is no JS  */}}
+    <noscript>
+        <style>
+            div.theme-changer {
+                display: none;
+            }
+        </style>
+    </noscript>
+    {{ block "nav" . }}{{ end }}
+</nav>
+<main>
+    {{ block "main" . }}{{ end }}
+</main>
+{{ block "comments" . }}{{ end }}
+<footer>
+    {{ block "footer" . }}{{ end }}
+</footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+baseURL: 'https://localhost:1313'
+languageCode: 'en-us'
+title: 'Jonathan Seepersad'
+author:
+  name: 'Jonathan Seepersad'
+disableKinds: [rss, sitemap]
+canonifyURLs: true
+minify: true
+menus:
+  main:
+    - name: 'Blog'
+      url: '/blog'
+    - name: 'CAGD 170'
+      url: '/blog/cagd170'
+params:
+  giscus:
+    repo: 'Jonathan-Seepersad/Jonathan-Seepersad.github.io'
+    repo_id: 'R_kgDOLY289Q'
+    category: 'Announcements'
+    category_id: 'DIC_kwDOLY289c4CeiSf'

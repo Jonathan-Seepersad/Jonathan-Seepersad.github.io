@@ -1,0 +1,47 @@
+{{ define "comments" }}
+    {{ $giscus := .Site.Params.giscus }}
+    {{ if not (eq $giscus nil) }}
+        <div class="comments">
+            {{ $theme := resources.Get "sass/giscus.scss" | toCSS (dict "targetPath" "css/giscus.css" "transpiler" "libsass") | minify }}
+            <noscript class="no-giscus">
+                No JavaScript, no comments :-(
+            </noscript>
+            <script src="https://giscus.app/client.js"
+                    data-repo="{{ $giscus.repo }}"
+                    data-repo-id="{{ $giscus.repo_id }}"
+                    data-category="{{ $giscus.category }}"
+                    data-category-id="{{ $giscus.category_id }}"
+                    data-mapping="specific"
+                    data-term="{{ .RelPermalink }}"
+                    data-strict="1"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    {{/*                data-theme="data:text/css;base64,{{ $theme.Content | base64Encode }}" */}}{{/* Maybe not the best way to avoid CORS access headers but works for now*/}}
+                    data-theme="light_high_contrast"
+                    data-lang="en"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+            ></script>
+        </div>
+    {{ end }}
+{{ end }}
+
+{{ define "main" }}
+    <header>
+        <h1>{{ .Title }}</h1>
+        <p class="author">
+            {{ if .Page.Params.author }}
+                {{ .Page.Params.author }} | {{ .Date.Format "January 2, 2006" }}
+            {{ else }}
+                {{ .Date.Format "January 2, 2006" }}
+            {{ end }}
+        </p>
+    </header>
+    <article>
+        {{ .Content }}
+    </article>
+    <aside>
+        {{ .Fragments.ToHTML 1 6 false }}
+    </aside>
+{{ end }}

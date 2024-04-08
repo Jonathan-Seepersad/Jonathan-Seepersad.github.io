@@ -1,0 +1,39 @@
+{{ define "main" }}
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+    <article>
+        {{ .Content }}
+    </article>
+
+    {{ if .Sections }}
+        <div class="section-list">
+            <h2>Folders:</h2>
+            {{ range .Sections }}
+                <a href="{{ .Permalink }}">
+                    <section>
+                        {{ .Title }}
+                    </section>
+                </a>
+            {{ end }}
+        </div>
+    {{ end }}
+
+    {{ if .RegularPages }}
+        <div class="article-list">
+            <h2>Articles:</h2>
+            {{ range .RegularPages.ByDate.Reverse }}
+                <a href="{{ .Permalink }}">
+                    <section>
+                        <header>
+                            <h1>{{ .Title }}</h1>
+                            <p> {{ .Date.Format "January 2, 2006" }}</p>
+                        </header>
+                        {{ .Content | truncate 150 " . . ." | chomp }}
+                    </section>
+                </a>
+            {{ end }}
+        </div>
+    {{ end }}
+
+{{ end }}
