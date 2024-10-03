@@ -1,7 +1,7 @@
 ---
 title: 'EPortfolio Post 1: Simple DnD Map'
 date: 2024-10-02T22:06:19-07:00
-draft: true
+draft: false
 description: ""
 author: "Jonathan Seepersad"
 keywords: []
