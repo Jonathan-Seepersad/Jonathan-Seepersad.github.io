@@ -23,9 +23,11 @@ While we could use Catan as inspiration, I was thinking that would be pretty bor
 
 While brainstorming, a wild old memory appeared in my head of an old Pop Cap game called “Mars needs Cows”.
 
-> ![Mars Needs Cows](/blog/CAGD170/mars_needs_cows.gif "Mars Needs Cows by Pop Cap for the Palm Pilot")
-> 
-> Mars Needs cows by Pop Cap for the Palm Pilot (dang was this game really that old?)
+{{<figure 
+    src="/blog/CAGD170/mars_needs_cows.gif"
+    alt="Mars Needs Cows by Pop Cap for the Palm Pilot"
+    caption="Mars Needs cows by Pop Cap for the Palm Pilot (dang was this game really that old?)"
+>}}
 
 Then I was wondering what if we created a game where a player is tasked with abducting farm animals from a farm? Then I also thought what if someone else was trying to fight back and defend the animals from abduction
 
@@ -39,11 +41,13 @@ This concept had a lot of issues as the rules were pretty complicate to put in w
 
 # Massive overhaul
 
-A teammate pitched the idea that the farm could be on mars. We also started to overhaul the alien’s side drawing inspiration from tower defense games like Plants vs Zombies (coincidentally also a cap com game). Instead of placing one strong alien that the farmers try to destroy as quickly as possible, the aliens instead have a few UFOs that can spawn troops into position. The aliens draw troops from a deck and can summon as many as they want, but the troops need to be beamed into position before they can make an attack.
+A teammate pitched the idea that the farm could be on mars. We also started to overhaul the alien’s side drawing inspiration from tower defense games like Plants vs Zombies (coincidentally also a pop cap game). Instead of placing one strong alien that the farmers try to destroy as quickly as possible, the aliens instead have a few UFOs that can spawn troops into position. The aliens draw troops from a deck and can summon as many as they want, but the troops need to be beamed into position before they can make an attack.
 
-> ![UFO](/blog/CAGD170/farmers_vs_aliens_UFO.png)
->
-> The UFO has 3 colored spaces under it which we called Zone 1, Zone 2, and Zone 3. Units are spawned in Zone 1 but cannot attack until they get to zone 3. (They move down one zone each turn)
+{{<figure
+    src="/blog/CAGD170/farmers_vs_aliens_UFO.png"
+    alt="UFO Concept"
+    caption="The UFO has 3 colored spaces under it which we called Zone 1, Zone 2, and Zone 3. Units are spawned in Zone 1 but cannot attack until they get to zone 3. (They move down one zone each turn)"
+>}}
 
 We started to create a set of alien troops, like a deck of cards (I thought it was like Hearthstone cards in a way, except players don’t spend resources to summon cards). While they can summon as many as they want without spending resources, they only had 4 spaces to summon troops and they had to get the troop in position before they can attack
 

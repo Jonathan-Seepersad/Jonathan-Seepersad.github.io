@@ -17,7 +17,10 @@ Thinking about our ideas, my idea immediately seemed too complicated and out of 
 
 When coming up with the rules concept, I envisioned that players would play on a board resembling a chess board. I wanted to create a spell that was equippable to each troop unit. I settled on a concept where pieces were square shaped while cards were slightly larger. The border of the card would highlight the effect of the card on the unit. This way, when the player places the card on the unit, they can see the effect of the card on the unit. Also since I was thinking of using a layout similar to a chess board, I decided to lean into using chess pieces as the units.
 
-> ![equip](/blog/CAGD170/Original_equip_concept.png)
+{{<figure
+    src="/blog/CAGD170/Original_equip_concept.png"
+    alt="equip"
+>}}
 
 I managed to come up with a simple set of rules by breaking down each round into phases.
 
@@ -43,11 +46,17 @@ We were happy to hear that, for the most part, people enjoyed the game's concept
 
 We were able to address the first issue with the following diagram which made it more obvious that the color of the spell card corresponded to the spell card type.
 
-> ![color-coded spell diagram](/blog/CAGD170/Spell_card_diagram.png)
+{{<figure
+    src="/blog/CAGD170/Spell_card_diagram.png"
+    alt="color-coded spell diagram"
+>}}
 
 For the second issue, we decided to look for a new set of assets to fit the theme of the game. We were struggling to find a consistent asset pack that included everything we wanted in a consistent style (and that was licensed for us to use), until I found [Tiny Swords by Pixel Frog](https://pixelfrog-assets.itch.io/tiny-swords). The assets weren't necessarily wizards but there were 3 different types of knights and 3 different types of skeletons that we decided to switch the concept to the Kingdom of Light vs the Goblin Army.
 
-> ![components](/blog/CAGD170/updated_components.png)
+{{<figure
+    src="/blog/CAGD170/updated_components.png"
+    alt="components"
+>}}
 
 The one thing we forgot to do was change the name of the game to reflect the new theme. Oh well…
 
