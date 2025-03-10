@@ -14,6 +14,8 @@ menus:
       url: '/blog/cagd170'
     - name: 'CAGD 270'
       url: '/blog/CAGD270'
+    - name: 'CAGD 370'
+      url: '/blog/CAGD370'
 params:
   giscus:
     repo: 'Jonathan-Seepersad/Jonathan-Seepersad.github.io'
