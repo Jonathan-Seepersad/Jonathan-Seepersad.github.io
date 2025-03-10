@@ -1,7 +1,7 @@
 ---
 title: 'CAGD370'
 date: 2025-03-09T23:35:21-07:00
-draft: true
+draft: false
 description: ""
 author: "Jonathan Seepersad"
 keywords: []
