@@ -1,8 +1,13 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-date: {{ .Date }}
-draft: true
+title: "{{ replace .Name "-" " " | title }}"
 description: ""
-{{ if not (eq .Site.Author.name "")}}author: "{{ .Site.Author.name }}"{{ end }}
+date: {{ .Date }}
+image: 
+math: 
+toc: true
+license: false
+hidden: false
+comments: true
 keywords: []
+draft: true
 ---

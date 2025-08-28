@@ -1,22 +1,63 @@
 baseURL: 'https://localhost:1313'
 languageCode: 'en-us'
 title: 'Jonathan Seepersad'
-author:
-  name: 'Jonathan Seepersad'
+authors:
+  - 'Jonathan Seepersad'
 disableKinds: [rss, sitemap]
 canonifyURLs: true
 minify: true
 menus:
   main:
-    - name: 'Blog'
-      url: '/blog'
-    - name: 'CAGD 170'
-      url: '/blog/cagd170'
-    - name: 'CAGD 270'
-      url: '/blog/CAGD270'
-    - name: 'CAGD 370'
-      url: '/blog/CAGD370'
+    - name: 'Home'
+      url: '/'
+      weight: 1
+      params:
+        icon: 'home'
+    - name: 'About me'
+      url: '/about'
+      weight: 2
+      params:
+        icon: 'user'
+    - name: 'Archive'
+      url: '/page/archives'
+      weight: 3
+      params:
+        icon: 'archives'
+    - name: 'Search'
+      url: '/page/search'
+      weight: 4
+      params:
+        icon: 'search'
+taxonomies:
+  tag: 'tags'
+  category: 'categories'
+  authors: 'authors'
+theme: 'hugo-theme-stack'
 params:
+  mainSections: 
+    - 'blog'
+  favicon: '/favicon.png'
+  sidebar:
+    compact: false
+    subtitle: 'Gamer and future game maker!'
+    avatar:
+      enabled: true
+      local: true
+      src: 'img/avatar.jpg'
+  widgets:
+    homepage:
+      - type: categories
+        params:
+          limit: 10
+      - type: search
+  comments:
+    enabled: true
+    provider: 'giscus'
+    giscus:
+      repo: 'Jonathan-Seepersad/Jonathan-Seepersad.github.io'
+      repoID: 'R_kgDOLY289Q'
+      category: 'Announcements'
+      categoryID: 'DIC_kwDOLY289c4CeiSf'
   giscus:
     repo: 'Jonathan-Seepersad/Jonathan-Seepersad.github.io'
     repo_id: 'R_kgDOLY289Q'
