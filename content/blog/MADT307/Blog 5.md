@@ -1,5 +1,5 @@
 ---
-title: "Blog 5"
+title: "Blog 5: APA Sources"
 description: ""
 date: 2025-09-26T20:07:20-07:00
 image: 
