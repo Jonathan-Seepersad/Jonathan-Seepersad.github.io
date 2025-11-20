@@ -1,5 +1,5 @@
 ---
-title: "Blog 3"
+title: "Blog 3: Bombs"
 description: ""
 date: 2025-11-19T17:30:51-08:00
 image: 
