@@ -1,5 +1,5 @@
 ---
-title: "Blog 5"
+title: "Blog 5: Git Troubles & Inventory Menu"
 description: ""
 date: 2025-12-10T17:51:48-08:00
 image: 
