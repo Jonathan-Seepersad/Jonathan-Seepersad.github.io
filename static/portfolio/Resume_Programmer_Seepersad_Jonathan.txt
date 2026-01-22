@@ -1,0 +1,58 @@
+Jonathan Seepersad
+Chico State Game Studios — Programmer
+
+jonathan@seepersad.me
++1 (408) 472-8498
+https://jonathan.seepersad.me/portfolio/programmer
+
+PROFILE
+
+Student of CSU Chico, studying B.S. in Computer Animation and Game Development, graduating 2026. Seeking new opportunities as a programmer. 2+ years practical experience working with Unity and Unreal, creating video games and interactive experiences.
+
+SKILLS
+
+Engines: Unity, Unreal Engine Programming Languages: C#, C++, Blueprints, JavaScript, Go
+Platforms: Windows, Linux, macOS, Android, Web Software: Blender, Maya, Adobe Substance, PhotoShop, Illustrator
+Soft Skills: Team Player/Teamwork, Adaptable, Creative, Self Driven, Communication, Respond to Feedback, Motivated
+Development Process: Agile, Trello
+
+WORK EXPERIENCE
+
+Teacher’s Assistant, CSU Chico — Introduction to Game Scripting with Unity, (08/2024 – 12/2024)
+•	Assist struggling students through grasping complex programming concepts in Unity using C#
+•	Facilitate one-on-one sessions tailoring sessions to improve students’ confidence and problem solving skills
+•	Diagnose and resolve technical issues with explanations adapted to students’ comprehension levels
+•	Moderated class discussions while responding to students inquiries in a timely manner.
+
+PROJECTS
+
+Sewer Swipers, Game Designer/Programmer — Grid-based dungeon crawler with sewer critters, (09/2025 – 12/2025)
+•	Unreal Engine based, using Blueprints, targeting Android with simple swipe and tap gestures.
+•	Created core components: Tilemap generator, base entities, base items, base tiles
+•	Grid-based navigation and movement of entities and interaction with tile contents
+•	Basic enemy AI behavior with pathfinding on grid-based levels and attacking of neighboring tiles
+•	Publishing process from Unreal Engine to Google Play Store
+
+Static Bog, Unity, Lead Programmer — 3D platforming with rocket-jumping from a shotgun, (02/2025 – 5/2025)
+•	Unity based, using C#, creating a 3D platformer featuring weapons with “rocket-jump” recoil ability
+•	Created player locomotion and control, and weapon’s ability to propel player
+•	Created basic enemy AI with patrol points and chase behavior
+•	Created custom Gizmos and Handles to assist with level design
+•	Programmed and designed responsive in-game user interface
+•	HTML5/Web export for easy distribution and playtesting of game
+
+Legend of Zelda: Wind Waker Recreation, Lead Programmer — Asset Production final project, (10/2025 – 12/2025)
+•	Unreal Engine based, using Blueprints, to showcase teammates’ modeling and texturing abilities.
+•	Managed git repository, enforcing branch access, code review, and conflict resolution within Unreal Engine
+•	Created player controls and locomotion, weapon behavior and use animation, heads-up-display and inventory menu
+•	Offer programming advice and strategies to teammates and peers
+
+GLHF: Go Language HaxeFlixel, Personal Programmer — WIP port of 2D game engine
+•	Recreate HaxeFlixel’s object oriented patterns comfortably in a procedural language like Go
+•	Gained in-depth knowledge of how game engines turn transformations and animated sprites into low-level draw calls
+•	Spotted hidden typos within HaxeFlixel codebase, contributed patches to original project which were merged
+
+EDUCATION
+
+B.S. Computer Animation and Game Development — CSU Chico, (11/2026)
+A.S. Computer Information Systems — Mission College, (12/2022)
