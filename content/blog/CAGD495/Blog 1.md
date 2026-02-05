@@ -1,6 +1,6 @@
 ---
-title: "Blog 1"
-description: ""
+title: "EPortfolio Post 1: Rumble Rally - Creating a new car controller system"
+description: "Start a new project \"Rumble Rally\", a couch multiplayer RC car battler. Starting off with a car control scheme."
 date: 2026-02-05T12:13:41-08:00
 image: 
 math: 
