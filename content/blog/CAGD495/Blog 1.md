@@ -78,7 +78,7 @@ public float FrontAcceleration
 
 Though when I want to apply settings to multiple wheels at once, I need set each wheel manually. Which, if I start to deal with slip values, gets pretty long and very messy.
 
-So I'm switching to a system where I'll have an array of wheel controllers that I can add to the wheel model `GameObject`s. Each of these wheel controllers creates their own `WheelCollider` on new `GameObject`s so I'm able to apply settings either through the player or this new class.
+So I'm switching to a system where I'll have a new wheel controllers that I can add to the wheel model `GameObject`s. Each of these wheel controllers creates their own `WheelCollider` on new `GameObject`s. The car controller can then store a reference to all of these wheels as an array so that I'm able to apply settings to each one.
 
 ```csharp
 private ImprovedWheelController[] wheels;
@@ -87,7 +87,7 @@ private void Start() =>
     wheels = GetComponentsInChildren<ImprovedWheelController>();
 ```
 
-These new wheel controllers also contain a few enums which indicate whether the wheel is part of the front or rear axel, and whether the wheel is on the left or right side. Which allows me to do something like this
+These new wheel controllers also contain a few enums which indicate whether the wheel is part of the front or rear axel, and whether the wheel is on the left or right side. Which allows me to do something like this:
 
 ```csharp
 // Utility class to apply changes to wheels of a particular axis/side
