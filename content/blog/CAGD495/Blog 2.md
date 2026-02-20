@@ -109,6 +109,8 @@ Which also leads into the charge ability which I started implementing. The main 
 In gameplay, it looked something like so:
 
 {{< video
-    src="/blog/CAGD/Gameplay.webm" >}}
+    src="/blog/CAGD495/Gameplay.webm" >}}
 
 There is also a countdown before the round starts to prepare the players to fight. Then the player's finally get control of their vehicle to battle. Finally, when a player dies, there is a new `LevelManager` to track which player's die and survive, allowing us to determine a winner and reset the round for the next game. Though the next feature I need to complete is getting the game to total the number of rounds won and determin the winner of the game.
+
+And for playtesting, I added controls to the bottom of the screen using icons from another Kenny asset pack. At least for now to make it a little clearer how to play the game.
