@@ -55,7 +55,7 @@ target.wheels.Apply(wheel => wheel.Brake = 0);
 
 ## Finite State Machines
 
-The last part that's essential to the new controllers was the addition of state machines. Our car previously had the left anr right triggers mapped to brakes and throttle respectively, but we also wanted controls for driving, braking, drifting, reversing, boosting, etc. This led to convoluted code where switching between different controls would need to reset the previous controls (i.e. brakes and drifiting would apply brake torque, which needs to be cleared when switching to driving).
+The last part that's essential to the new controllers was the addition of state machines. Our car previously had the left and right triggers mapped to brakes and throttle respectively, but we also wanted controls for driving, braking, drifting, reversing, boosting, etc. This led to convoluted code where switching between different controls would need to reset the previous controls (i.e. brakes and drifiting would apply brake torque, which needs to be cleared when switching to driving).
 
 Though, thinking about the controls as different states we switch between made the complex controls a lot more manageable in code. The neat thing about Finite State Machines (or FSM) is that they often have events for when you enter or leave a state. In addition to each state having their own in-depth behavior of what input switches the state to a differenc control scheme. So our `BrakeState` can activate the breaks when it enters, update checks if the brakes are held, and finally release the brakes as we exit.
 
@@ -68,12 +68,10 @@ Overall, this new system allows us to seamlessly and intuitively change the car'
 
 # Multiplayer
 
-Our game is intended to be multiplayer, so the next important feature was to get our game to support multiple gamepads to control multiple players.
+Our game is intended to be multiplayer, so the next important feature was to get our game to support multiple gamepads to control multiple players. Unity handles this using `PlayerInput` component. When spawned, they connect one player's input to one game object with the component attached. So, our car controller is setup with a `PlayerInput` component. I also made a `GameManager`, which has a list of players to spawn (allowing players to pick their player and have that setting persist between states). Then the player looks in the current level for objects with a spawn point component (another simple script I made), and spawns the players at the cooresponding positions. Unity does the rest hooking all the inputs to the players.
 
 {{< video
     src="/blog/CAGD495/Multiplayer.webm" >}}
-
-
 
 # Importing Models
 
@@ -84,12 +82,33 @@ All this time, I've been working with the Kenney race car asset, just to get the
 
 This is the first car to include, with the driver named Ron Rally. As the car controller was already pretty flexible, importing and setting up was a seamless and painless process. Though we wanted to have some animations to give more feel and character to the car. Things like making the car tilt forward and back as it accelerates, make the antenna wobble, etc. Though this was initially going to be keyframe animated, I recommended against that and instead pitched using physics to make them respond naturally. 
 
-The car's `WheelCollider`s already have spring physics to simulate suspention, which make the car tilt as it's acceleration changes. The antenna was rigged by one of our animators, so I tried hooking up the bones to some physics joints to give it a little bit of "jiggle physics" as the car moves. It took some trial and error to tune the settings to work nicely. Some previous attempts made for hilarious results that lift the car off the floor by the antenna.
+The car's `WheelCollider`s already have spring physics to simulate suspention, which make the car tilt as it's acceleration changes. The antenna was rigged by one of our animators, so I tried hooking up the bones to some physics joints to give it a little bit of "jiggle physics" as the car moves.
+
+It took some trial and error to tune the settings to work nicely. Some previous attempts made for hilarious results that lift the car off the floor by the antenna.
 
 {{< video
     src="/blog/CAGD495/MyPeopleNeedMe.webm" >}}
 
-When implemented correctly, it makes the antenna do a little bobble as the car moves!
+Physics can be weird sometimes, but when implemented correctly, it makes the antenna do a little bobble as the car moves!
 
 {{< video
     src="/blog/CAGD495/Physics.webm" >}}
+
+Oh, and you'll notice the blue and red cars! Our artists made variant textures so multiple players have their car indicate their color. The automatically set's the model's color based on the player's index!
+
+# UI, Charge, and Gameplay
+
+Afterwards, I started to hookup the car's stats to the UI. I had to do a little modifications to the UI in order to get it to readjust it's elements based on screensize (the previous one had elements in static positions with the same anchor, so they often get off screen or annoyingly in the middle of the screen).
+
+![UI](/blog/CAGD495/UI.png)
+
+The UI updates to display player's health and charge amount.
+
+Which also leads into the charge ability which I started implementing. The main way (currently) that player's deal damage is by smashing into their opponents while charge mode is activated. The charge mode I created used another state machine so charge replenishes over time by default. Activating charge subtracted a fair sum, while sustaining it depleted the charge meter over time. Then there was a cooldown before charge starts to refill again.
+
+In gameplay, it looked something like so:
+
+{{< video
+    src="/blog/CAGD/Gameplay.webm" >}}
+
+There is also a countdown before the round starts to prepare the players to fight. Then the player's finally get control of their vehicle to battle. Finally, when a player dies, there is a new `LevelManager` to track which player's die and survive, allowing us to determine a winner and reset the round for the next game. Though the next feature I need to complete is getting the game to total the number of rounds won and determin the winner of the game.
