@@ -9,7 +9,7 @@ license: false
 hidden: false
 comments: true
 keywords: []
-draft: true
+draft: false
 ---
 
 # Background
@@ -26,4 +26,17 @@ These two objects behaved a little differently. `LevelManager` is a script attac
 
 `GameMode` however needs to store information that persists across scene loads. So the `GameMode` is set as a field value on our [singleton](https://en.wikipedia.org/wiki/Singleton_pattern) `GameManager` class. It also exposes event methods for when we load into different scenes (so a result screen has different behavior then a game arena or menu scene). So instead of using Unity's `Start`, our GameManager will track when we enter a scene and call the cooresponding `GameMode` event method.
 
-![Rounds](/blog/CAGD495/Rounds.gif)
+When a player dies, kills another player, wins, etc. we store this data in the GameMode singleton, accessed by our `GameMode`. So when a player wins a certain number of rounds, we can can determine the winner of the match.
+
+{{< video
+    src="/blog/CAGD495/StateNavigation.webm" >}}
+
+And as the video above should suggest, there will be other game modes to switch between. Because our `GameMode`s operate off of events, we can simply just swap which `GameMode` is attached to our `GameManager`.
+
+# Power Ups and the Battery
+
+Also showcased in that video above are the battery power ups, the other major feature worked on this sprint. 
+
+Power ups use a base class of `BaseItem`, to make creating new power ups easier. It exposes an event one function called when a player collides with it, but then has an `Activate` and `Deactivate` function that can be overridden to start the power ups effect, and then reverse its effect when depleted.
+
+The battery is the first item I am working on and it simply activates the charge ability regardless of how much charge the player had beforehand. It also has the option of filling the chage meter and increasing the max car's torque.
