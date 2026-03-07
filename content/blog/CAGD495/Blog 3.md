@@ -39,4 +39,14 @@ Also showcased in that video above are the battery power ups, the other major fe
 
 Power ups use a base class of `BaseItem`, to make creating new power ups easier. It exposes an event one function called when a player collides with it, but then has an `Activate` and `Deactivate` function that can be overridden to start the power ups effect, and then reverse its effect when depleted.
 
-The battery is the first item I am working on and it simply activates the charge ability regardless of how much charge the player had beforehand. It also has the option of filling the chage meter and increasing the max car's torque.
+The battery is the first item I am working on and it simply activates the charge ability regardless of how much charge the player had beforehand. It also has the option of filling the chage meter and increasing the max car's torque by a scalar.
+
+# New Charge System
+
+The charge system was also reworked a bit. Previously, it filled over time and the player can hold the charge button to deplete some charge to get a boost and to attack players. However, the charge was intended to be filled as the player keeps moving.
+
+Here, we can see the charge bar fills slowly but only when the player is holding the throttle. When they switch to reverse, brake, or just stop driving, the charge meter rapidly empties.
+
+Like last time, players deal damage during charge attacks. But they weren't supposed to get a large boost. Here we reuse that same throttle scalar from the battery power up to just give a little boost.
+
+The other difference is after the player uses charge, it fully depletes the bar, so players need to strategize and time their attacks to avoid missing.
