@@ -26,7 +26,14 @@ Teacher’s Assistant, CSU Chico — Introduction to Game Scripting with Unity, 
 
 PROJECTS
 
-Sewer Swipers, Game Designer/Programmer — Grid-based dungeon crawler with sewer critters, (09/2025 – 12/2025)
+Rally Rumble, Programmer — Local Multiplayer Physics-based Demolition Derby, (01/2026 – 05/2026)
+•	Managed git repository of 9-person team: branch management, code review, conflict resolution
+•	Designed physics-based car controller with custom 5-state state machine - driving, braking, drifting, reversing, charging
+•	Implemented local 2-player multiplayer, with multiple gamepad input routing
+•	Created power-up system with 6 unique items
+•	Designed responsive UI scaling across resolutions and aspect ratios
+
+Sewer Swipers, Game Designer/Programmer — Grid-based dungeon crawler mobile game, (09/2025 – 12/2025)
 •	Unreal Engine based, using Blueprints, targeting Android with simple swipe and tap gestures.
 •	Created core components: Tilemap generator, base entities, base items, base tiles
 •	Grid-based navigation and movement of entities and interaction with tile contents

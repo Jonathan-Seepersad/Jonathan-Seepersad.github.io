@@ -20,6 +20,7 @@ params.sidebar:
 Sewer Swipers is a grid-based dungeon crawler game for Android, created in Unreal Engine.
 
 Made from a small team of three, I played the role of the designer (who also contributed as a developer). I created the base components the game depends on including:
+
 - The tilemap (which is used to generate levels from a set of data structures)
 - The base tile object which other tiles use to add their own functionality
 - Entities that traverse along the tiles of the grid
