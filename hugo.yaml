@@ -1,11 +1,12 @@
 baseURL: 'https://localhost:1313'
-languageCode: 'en-us'
+locale: 'en-us'
 title: 'Jonathan Seepersad'
 authors:
   - 'Jonathan Seepersad'
 disableKinds: [rss, sitemap]
 canonifyURLs: true
-minify: true
+minify:
+  minifyOutput: true
 menus:
   main:
     - name: 'Home'
@@ -40,10 +41,7 @@ params:
   sidebar:
     compact: false
     subtitle: 'Gamer and future game maker!'
-    avatar:
-      enabled: true
-      local: true
-      src: 'img/avatar.jpg'
+    avatar: 'img/avatar.jpg'
   widgets:
     homepage:
       - type: categories
