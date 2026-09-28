@@ -71,6 +71,16 @@ Another teammate had already created UI widgets to display the player's health a
     src="/blog/CAGD470/HealthDisplay.webm"
 >}}
 
+# Upgrading spells
+
+A little minor feature added, but sets up a lot of the important groundwork for later on, is a system to apply upgrade to spells. The way I went about this is by creating an enum to represent each upgrade aspects of a spell (not all spells support all aspects, but makes it easier to deal with over raw numbers or strings), then a variable is added to the spells that is a map with that enum as the key, and a number representing the aspects level as the value.
+
+As an example, I've added a "multishot" aspect to the projectile skill, which increases the number of bullets shot at a time.
+
+{{<video
+    src="/blog/CAGD470/UpgradingSkill.webm"
+>}}
+
 # Enemy Spawning / Wave System
 
 The next big feature needed for our prototype, was for a method of spawning enemies and tracking enemy waves. The designer envisioned the spawners will continuously spawn at the start of the wave, not exceeding 200 enemies and it stops after 60 seconds. Then after the player kills all enemies standing, the next wave begins.
