@@ -12,6 +12,7 @@ keywords: []
 draft: false
 ---
 
+
 # Background
 
 To finish of our Game Asset Production class, we've started a new project as a small group of four to recreate a scene from a modern game. Our group chose Resident Evil 4 (particularly the new remake from 2023).
